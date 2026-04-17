@@ -7,7 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="container">
+    <h2>Vigenere Cipher</h2>
+
+    <label>Teksti:</label>
+    <textarea id="inputText"></textarea>
+
+    <label>Seed:</label>
+    <input type="text" id="seed">
+
+    <div class="buttons">
+        <button onclick="encrypt()">Encrypt</button>
+        <button onclick="decrypt()">Decrypt</button>
+    </div>
+
+    <label>Rezultati:</label>
+    <div class="output" id="output"></div>
+    </div>
 
     <script src="script.js"></script>
 </body>
