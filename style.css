@@ -1,6 +1,6 @@
 body {
         font-family: Arial, sans-serif;
-        background: #1e1e2f;
+        background: radial-gradient(circle at top, #2b2b44, #14141f);
         color: white;
         display: flex;
         justify-content: center;
@@ -11,27 +11,45 @@ body {
 
     .container {
         background: #2c2c3e;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         padding: 25px;
-        border-radius: 12px;
+        border-radius: 16px;
         width: 350px;
         box-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
 
+    .container:hover {
+    transform: translateY(-2px);
+}
+
     h2 {
         text-align: center;
         margin-bottom: 15px;
+        letter-spacing: 1px;
     }
 
-    textarea, input {
-        width: 100%;
-        padding: 8px;
-        margin-top: 5px;
-        margin-bottom: 10px;
-        border-radius: 6px;
-        border: none;
-        outline: none;
-        font-size: 14px;
-    }
+    textarea,
+input {
+    width: 100%;
+    padding: 9px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    outline: none;
+    font-size: 14px;
+    background: #1b1b28;
+    color: white;
+    transition: 0.2s;
+}
+
+textarea:focus,
+input:focus {
+    border-color: #4cafef;
+    box-shadow: 0 0 5px rgba(76, 175, 239, 0.5);
+}
 
     textarea {
         resize: none;
@@ -52,10 +70,13 @@ body {
         font-weight: bold;
         background: #4cafef;
         color: white;
+        transition: 0.2s ease;
     }
 
     button:hover {
         background: #3a9edc;
+        transform: scale(1.03);
+        border-left: 3px solid #6c63ff;
     }
 
     .output {
@@ -65,4 +86,5 @@ body {
         min-height: 40px;
         margin-top: 10px;
         font-family: monospace;
+      
     }
