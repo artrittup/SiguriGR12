@@ -40,3 +40,27 @@ function encrypt() {
 
     document.getElementById("output").innerText = result;
 }
+
+
+function decrypt() {
+    let encryptedText = document.getElementById("inputText").value.toUpperCase().replace(/[^A-Z]/g, '');
+    let seed = document.getElementById("seed").value;
+
+    if (!encryptedText || !seed) {
+        alert("Ju lutem vendosni tekstin e enkriptuar te kutia 'Teksti' dhe shënoni seed-in!");
+        return;
+    }
+
+    // Gjenerojmë saktësisht të njëjtin çelës duke përdorur të njëjtin seed
+    let key = generateKey(encryptedText.length, seed);
+    let result = "";
+
+    for (let i = 0; i < encryptedText.length; i++) {
+        let c = encryptedText.charCodeAt(i) - 65; 
+        let k = key.charCodeAt(i) - 65;     
+        let p = (c - k + 26) % 26;
+        result += String.fromCharCode(p + 65);
+    }
+
+    document.getElementById("output").innerText = result;
+}
