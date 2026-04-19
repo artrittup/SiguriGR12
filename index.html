@@ -7,6 +7,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="wrapper">
+    <div class="description">
+    <h1>Vigenère Cipher Encryption Tool</h1>
+
+    <p>
+        Ky aplikacion implementon algoritmin klasik të enkriptimit 
+        <strong>Vigenère Cipher</strong>, i cili përdor një key për të 
+        transformuar tekstin në formë të sigurt.
+    </p>
+
+    <p>
+        Key nuk jepet direkt, por gjenerohet automatikisht nga një 
+        <strong>seed</strong>, duke krijuar një keystream pseudo-random 
+        me gjatësi të njëjtë me tekstin.
+    </p>
+
+    <ul>
+        <li>Encrypt / Decrypt tekst</li>
+        <li>Gjenerim key nga seed</li>
+        <li>Vetëm karaktere A-Z</li>
+    </ul>
+    </div>
     <div class="container">
     <h2>Vigenere Cipher</h2>
 
@@ -23,6 +45,7 @@
 
     <label>Rezultati:</label>
     <div class="output" id="output"></div>
+    </div>
     </div>
 
     <script src="script.js"></script>

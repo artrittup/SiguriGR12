@@ -88,3 +88,37 @@ input:focus {
         font-family: monospace;
       
     }
+
+
+    .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.description {
+    background: #2c2c3e;
+    padding: 15px;
+    border-radius: 10px;
+    width: 350px;
+    text-align: left;
+}
+
+.description h1 {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.description p {
+    font-size: 13px;
+    color: #ccc;
+    margin-bottom: 8px;
+}
+
+.description ul {
+    font-size: 13px;
+    color: #ddd;
+    padding-left: 18px;
+}
