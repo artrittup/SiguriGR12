@@ -26,19 +26,35 @@ function generateKey(length, seed) {
 }
 
 function encrypt() {
-    let text = normalize(document.getElementById("inputText").value);
-    let seed = document.getElementById("seed").value;
+    let inputElem = document.getElementById("inputText");
+    let seedElem = document.getElementById("seed");
+    let outputElem = document.getElementById("output");
+    
+    let text = inputElem.value.trim();
+    let seed = seedElem.value.trim();
 
-    let key = generateKey(text.length, seed);
+    if (text === "") {
+        alert("Shkruaj një tekst në fushën e tekstit!");
+        return;
+    }
+    if (seed === "") {
+        alert("Shkruaj një seed (numër ose tekst)!");
+        return;
+    }
+
+  
+    let normalized = normalize(text);
+    let key = generateKey(normalized.length, seed);
     let result = "";
 
-    for (let i = 0; i < text.length; i++) {
-        let p = text.charCodeAt(i) - 65;
+    for (let i = 0; i < normalized.length; i++) {
+        let p = normalized.charCodeAt(i) - 65;
         let k = key.charCodeAt(i) - 65;
         result += String.fromCharCode((p + k) % 26 + 65);
     }
 
-    document.getElementById("output").innerText = result;
+    outputElem.innerText = result;
+
 }
 
 
